@@ -1,4 +1,9 @@
-function Pager(pageName) {
+function Pager(pageName, option) {
+    if(option == "hashTrumpsName") {
+        if(window.location.hash != "" && window.location.hash != "#") {
+            pageName = window.location.hash.replace("#", "");
+        }
+    }
     if(Pager.initialized !== true) {
         console.log("Pager", "Generating page cache");
         Pager.pageCache = {};
@@ -30,10 +35,20 @@ function Pager(pageName) {
             page.style.display = "none";
         }
     }
+    if(option !== "hashTrumpsName") {
+        window.history.pushState("", "To page " + pageName, "#" + pageName);
+    }
     if(!foundIt) {
-        console.warn("Requested to load nonexistant page '" + pageName + "'.");
+        console.warn("Requested to load (or loading from hash) nonexistant page '" + pageName + "'.");
     }
 }
+Pager.cfg = {};
+Pager.cfg.ignorePopState = false;
+window.addEventListener("popstate", function() {
+    if(!Pager.cfg.ignorePopState && window.location.hash !== "" && window.location.hash !== "#") {
+        Pager("", "hashTrumpsName");
+    }
+});
 // When pager is first called, it needs to regenerate the page cache.
 Pager.initialized = false;
 Pager.regenerateCache = function() {
