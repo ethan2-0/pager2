@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Pager tests: Failed</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    </head>
+    <body>
+        Test <span id="bad-test" style="font-weight: bold;"></span> failed.<br/>
+        <a href="index.html">Back to home</a><br/>
+        <a href="test1.html">Re-run</a>
+        <script type="text/javascript">
+            $("#bad-test").html(window.location.hash.replace("#", ""));
+        </script>
+    </body>
+</html>

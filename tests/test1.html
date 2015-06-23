@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Pager tests: Test 1</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    </head>
+    <body>
+        Test 1
+        <div class="page" page="page1" id="page1"></div>
+        <div class="page" page="page2" id="page2"></div>
+        <script type="text/javascript" src="tests.js"></script>
+        <script type="text/javascript" src="../src/pager.js"></script>
+        <script type="text/javascript">
+            testCfg = {
+                nextTest: "test2",
+                myName: "test1"
+            };
+            Pager("page1");
+            assert($("#page2").css("display") == "none");
+            pass();
+        </script>
+    </body>
+</html>

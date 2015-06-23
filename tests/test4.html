@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Pager tests</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    </head>
+    <body>
+        Test 4
+        <div class="page" page="page1" id="page1"></div>
+        <div class="page" page="page2" id="page2"></div>
+        <script type="text/javascript" src="tests.js"></script>
+        <script type="text/javascript" src="../src/pager.js"></script>
+        <script type="text/javascript">
+            testCfg = {
+                nextTest: "test5",
+                myName: "test4"
+            };
+            window.history.pushState("", "", "#page2");
+            Pager("page1", "hashTrumpsName");
+            assert($("#page1").css("display") == "none");
+            pass();
+        </script>
+    </body>
+</html>
