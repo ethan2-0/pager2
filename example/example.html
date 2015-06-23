@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Pager 2 Example</title>
+        <!-- My stylesheet -->
+        <link rel="stylesheet" href="example.css">
+    </head>
+    <body onload="Pager('home')">
+        <div class="page" page="home">
+            <h1>Home</h1>
+            <center><button onclick="Pager('page2')">Page 2</button></center>
+            <center><button onclick="Pager('page3')">Page 3</button></center>
+        </div>
+        <div class="page" page="page2">
+            <h1>Page 2</h1>
+            <center><button onclick="Pager('home')">Home</button></center>
+            <center><button onclick="Pager('page3')">Page 3</button></center>
+        </div>
+        <div class="page" page="page3">
+            <h1>Page 3</h1>
+            <center><button onclick="Pager('home')">Home</button></center>
+            <center><button onclick="Pager('page2')">Page 2</button></center>
+        </div>
+        <script type="text/javascript" src="../src/pager.js"></script>
+    </body>
+</html>
