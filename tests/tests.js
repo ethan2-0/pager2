@@ -20,7 +20,7 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /*
 
-This is a small ser of functions to facilitate the unit tests in test*.html. This is by no means a unit
+This is a small set of functions to facilitate the unit tests in test*.html. This is by no means a unit
 testing library.
 
 */
