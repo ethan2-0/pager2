@@ -15,8 +15,8 @@ which means that, if the url ends in `#something`, it will attempt to load the p
 
 `Pager.cfg`: The object containing all of Pager's configuration.
 
-`Pager.cfg.ignorePopState`: Ignore `popstate` events. When you click your back button and Pager handles it, instead of making a server round-trip,
-it's because it's got a `popstate` handler. For more info, just look at the MDN docs. It's when a pushState state gets popped off of the stack. Setting
+`Pager.cfg.ignorePopState`: Ignore `popstate` events. When you click your back button and Pager handles it, instead of making a server round-trip, it navigates to the previous page,
+because it's got a `popstate` handler. For more info, just look at the MDN docs. It's when a pushState state gets popped off of the stack. Setting
 this to false will disable Pager functionality associated with pushState.
 
 `Pager.initialized`: The complement of the dirty bit on Pager's page cache. In other words, if `Pager.initialized` is `false` when `Pager` gets called,
